@@ -1,23 +1,24 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const { title } = require('process');
 
 inquirer.prompt(
     [
         {
             type: 'input',
-            name: 'Project Title',
+            name: 'Title',
             message: 'What is the title of your project?',
             validate: (value) => { if(value){return true} else {return 'you must input a value to continue'}},
         },
         {
             type: 'input',
-            name: 'Project Description',
+            name: 'Description',
             message: 'What is the description of your project?',
             validate: (value) => { if(value){return true} else {return 'you must input a value to continue'}},
         },
         {
             type: 'input',
-            name: 'Table of Contents',
+            name: 'TBContents',
             message: 'Please input the table of contents of your project?',
             validate: (value) => { if(value){return true} else {return 'you must input a value to continue'}},
         },
@@ -48,8 +49,8 @@ inquirer.prompt(
         },
         {
             type: 'input',
-            name: 'tests',
-            message: 'Please list any tests you would like to include',
+            name: 'test',
+            message: 'Please input instructions to test your project',
             validate: (value) => { if(value){return true} else {return 'you must input a value to continue'}},
         },
         {
@@ -58,8 +59,30 @@ inquirer.prompt(
             message: 'Please list any questions you would like to include',
             validate: (value) => { if(value){return true} else {return 'you must input a value to continue'}},
         },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Please input your github username',
+            validate: (value) => { if(value){return true} else {return 'you must input a value to continue'}},
+        },
+
 
 
     
     ]
+).then(( {
+ Title,
+ Description,
+ TBContents,
+ Installation,
+ usage,
+ license,
+ contributors,
+ test,
+ questions,
+ github,
+ } ) => {
+
+
+}
 )
